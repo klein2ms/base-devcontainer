@@ -50,7 +50,7 @@ jobs:
           --platform linux/amd64 \
           --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
           --build-arg VCS_REF=`git rev-parse --short HEAD` \
-          --build-arg BASE_IMAGE=${{ matrix.base-image }}
+          --build-arg BASE_IMAGE=${{ matrix.base-image }} \
           --build-arg VERSION=${{ matrix.base-image }}-${{ matrix.version }} \
           --build-arg VARIANT=${{ matrix.version }} \
           -t klein2ms/base-devcontainer:${{ matrix.base-image }}-${{ matrix.version }} \
