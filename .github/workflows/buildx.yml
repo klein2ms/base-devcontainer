@@ -31,6 +31,8 @@ jobs:
           - base-image: python
             version: 3.9
           - base-image: java
+            version: 8
+          - base-image: java
             version: 11
     steps:
       - name: Checkout
