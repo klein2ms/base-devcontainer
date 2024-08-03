@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=base
 ARG VARIANT=debian
 
-FROM mcr.microsoft.com/vscode/devcontainers/${BASE_IMAGE}:${VARIANT} AS base
+FROM mcr.microsoft.com/devcontainers/${BASE_IMAGE}:${VARIANT} AS base
 
 # Build-time metadata as defined at https://github.com/opencontainers/image-spec/blob/master/annotations.md
 ARG BUILD_DATE
