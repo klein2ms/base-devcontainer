@@ -39,8 +39,8 @@ RUN set -ex \
     && apt-get install --no-install-recommends -y $BUILD_DEPS \
     && apt-get install --no-install-recommends -y $APP_DEPS \
     && apt-get update \
-    && apt-get install --no-install-recommends -y fonts-powerline fonts-firacode gh \
-    && curl -sS https://starship.rs/install.sh | sh \
+    && apt-get install --no-install-recommends -y fonts-powerline fonts-firacode gh
+RUN curl -sS https://starship.rs/install.sh | sh \
     # && curl -s https://api.github.com/repos/starship/starship/releases/latest \
     # | grep browser_download_url \
     # | grep x86_64-unknown-linux-gnu \
