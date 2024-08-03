@@ -40,15 +40,14 @@ RUN set -ex \
     && apt-get install --no-install-recommends -y $APP_DEPS \
     && apt-get update \
     && apt-get install --no-install-recommends -y fonts-powerline fonts-firacode gh
-RUN curl -sS https://starship.rs/install.sh | sh \
-    # && curl -s https://api.github.com/repos/starship/starship/releases/latest \
-    # | grep browser_download_url \
-    # | grep x86_64-unknown-linux-gnu \
-    # | cut -d '"' -f 4 \
-    # | wget -qi - \
-    # && tar xvf starship-*.tar.gz \
-    # && mv starship /usr/local/bin/ \
-    # && rm starship-*.tar.gz \
+RUN curl -s https://api.github.com/repos/starship/starship/releases/latest \
+    | grep browser_download_url \
+    | grep x86_64-unknown-linux-gnu \
+    | cut -d '"' -f 4 \
+    | wget -qi - \
+    && tar xvf starship-*.tar.gz \
+    && mv starship /usr/local/bin/ \
+    && rm starship-*.tar.gz \
     && echo 'eval "$(starship init zsh)"' >> /root/.zshrc \
     && gh completion -s zsh > /usr/local/share/zsh/site-functions/_gh \
     && gh config set editor "code --wait" \
